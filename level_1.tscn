@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8o1ainp3ornt"]
+
+[ext_resource type="Texture2D" uid="uid://c46m2vbkm33vy" path="res://Assets/Map/Level 1-1/bg-1-1.png" id="1_uxich"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayiih"]
+size = Vector2(3380, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go2kx"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4b5h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md2x1"]
+size = Vector2(32, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41okq"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqj8q"]
+size = Vector2(32, 64)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="TileMapLayer" parent="."]
+
+[node name="Middle" type="TileMapLayer" parent="."]
+
+[node name="Top" type="TileMapLayer" parent="."]
+
+[node name="Bg-1-1" type="Sprite2D" parent="."]
+position = Vector2(-7, 7)
+texture = ExtResource("1_uxich")
+
+[node name="Sol" type="StaticBody2D" parent="Bg-1-1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg-1-1/Sol"]
+position = Vector2(-2, -16)
+shape = SubResource("RectangleShape2D_ayiih")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bg-1-1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg-1-1/StaticBody2D2"]
+position = Vector2(-1328, -88)
+shape = SubResource("RectangleShape2D_go2kx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bg-1-1/StaticBody2D2"]
+position = Vector2(-1424, -88)
+shape = SubResource("RectangleShape2D_i4b5h")
+
+[node name="Tuyeau" type="StaticBody2D" parent="Bg-1-1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg-1-1/Tuyeau"]
+position = Vector2(-1224, -48.5)
+shape = SubResource("RectangleShape2D_md2x1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bg-1-1/Tuyeau"]
+position = Vector2(-1064, -56)
+shape = SubResource("RectangleShape2D_41okq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bg-1-1/Tuyeau"]
+position = Vector2(-936, -64)
+shape = SubResource("RectangleShape2D_nqj8q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bg-1-1/Tuyeau"]
+position = Vector2(-760, -64)
+shape = SubResource("RectangleShape2D_nqj8q")
+
+[node name="MaskColor" type="ColorRect" parent="Bg-1-1"]
+offset_left = -671.0
+offset_top = -126.0
+offset_right = -631.0
+offset_bottom = -86.0
+color = Color(0.360784, 0.580392, 0.988235, 1)
+
+[node name="MaskColor2" type="ColorRect" parent="Bg-1-1"]
+offset_left = -780.0
+offset_top = -136.0
+offset_right = -740.0
+offset_bottom = -96.0
+color = Color(0.360784, 0.580392, 0.988235, 1)
+
+[node name="MaskColor3" type="ColorRect" parent="Bg-1-1"]
+offset_left = -1683.0
+offset_top = -512.0
+offset_right = 1687.0
+offset_bottom = -224.0
+color = Color(0.360784, 0.580392, 0.988235, 1)

@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://diokusud7niim"]
+
+[ext_resource type="Texture2D" uid="uid://bjjxgt6nyqcu8" path="res://Assets/Player/MarioRun1.png" id="1_6ruak"]
+[ext_resource type="Script" path="res://Script/player.gd" id="1_pt3wm"]
+[ext_resource type="Texture2D" uid="uid://dbxpyu8oqu4dn" path="res://Assets/Player/MarioRun2.png" id="2_dnkod"]
+[ext_resource type="Texture2D" uid="uid://dgalg7duno1mm" path="res://Assets/Player/MarioRun3.png" id="3_fqo4m"]
+[ext_resource type="Texture2D" uid="uid://blmle46sn11d7" path="res://Assets/Player/MarioIdle.png" id="4_u3prl"]
+[ext_resource type="Texture2D" uid="uid://d1yfp55y1ie71" path="res://Assets/Player/MarioJump.png" id="5_urobf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vpqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u3prl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_urobf")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6ruak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dnkod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fqo4m")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c05yq"]
+size = Vector2(14, 17)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pt3wm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vpqm")
+animation = &"run"
+frame_progress = 0.103039
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_c05yq")
